@@ -1,45 +1,15 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
+import easy.RemoveDuplicatesFromSortedArray;
 import easy.RomanToInteger;
 
 public class App {
-
-    static boolean isAnagram(String a, String b) {
-        // Complete the function
-        if (a.length() != b.length()) {
-            return false;
-        }
-
-        // char[] charA = a.toLowerCase().toCharArray();
-        // char[] charB = b.toLowerCase().toCharArray();
-
-        // Arrays.sort(charA);
-        // Arrays.sort(charB);
-
-        // return Arrays.equals(charA, charB);
-
-        a = a.toLowerCase();
-        b = b.toLowerCase();
-
-        int[] charCounts = new int[26];
-
-        for (int i = 0; i < a.length(); i++) {
-            charCounts[a.charAt(i) - 'a']++;
-            charCounts[b.charAt(i) - 'a']--;
-        }
-
-        for (int count : charCounts) {
-            if (count != 0) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     public static void main(String[] args) {
-        RomanToInteger romanToInteger = new RomanToInteger();
-        System.out.println(romanToInteger.romanToInt("MCMXCIV"));
+//        RomanToInteger romanToInteger = new RomanToInteger();
+//        System.out.println(romanToInteger.romanToInt("MCMXCIV"));
+        RemoveDuplicatesFromSortedArray removeDuplicatesFromSortedArray = new RemoveDuplicatesFromSortedArray();
+        int[] arr = {0,0,1,1,1,2,2,3,3,4};
+        System.out.println(removeDuplicatesFromSortedArray.removeDuplicates(arr));
     }
 }
